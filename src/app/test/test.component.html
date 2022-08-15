@@ -1,0 +1,16 @@
+<div>
+<!--  <input type="checkbox" (change)="change()" [checked]="value">-->
+  <input type="checkbox" [(ngModel)]="value">
+
+  <button class="btn" [disabled]="!value">
+    {{value ? "On" : "Off"}}
+  </button>
+<!--  <span *ngIf="value; else elseSpan"> Disabled-->
+<!--    </span>-->
+<!--    -->
+<!--    <ng-template #elseSpan> -->
+<!--      <span> Disabled </span>-->
+<!--    </ng-template>-->
+
+
+</div>

@@ -1,0 +1,4 @@
+
+<app-add-new-owner class="form-owner" (addNewOwnerClicked)="addOwnerToList($event)" [ownerToSet]="owner!" (modifiedOwner)="updateSelectedOwner($event)"></app-add-new-owner>
+<app-owners-list class="list-owner" [ownersList]="ownersList" (editOwnerClicked)="selectedOwner($event)" ></app-owners-list>
+

@@ -1,0 +1,69 @@
+<main>
+  <h1>Insurance</h1>
+  <form #insuranceForm="ngForm" (ngSubmit)="submitFormInsurance(insuranceForm)">
+    <div class="form-field">
+      <label for="company">Company</label>
+      <input type="text" id="company" ngModel name="insuranceCompany"/>
+    </div>
+    <div class="form-field">
+      <label for="person-id">Person ID</label>
+      <select id="person-id" ngModel name="insurancePersonId">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="car-id">Card ID</label>
+      <select id="car-id" ngModel name="insuranceCarId">
+        <option>C1</option>
+        <option>C2</option>
+        <option>C3</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <p>Direct Pay<br>
+        <input type="checkbox" ngModel name="insuranceDirectPay" value="true">
+        <label class="container">Yes</label><br>
+        <input type="checkbox" ngModel name="insuranceDirectPay" value="false">
+        <label class="container">No</label><br>
+      </p>
+
+    </div>
+    <div class="form-field " id="payment-type">
+      <p>Payment Type:<br>
+        <input type="radio" id="cash"  ngModel name="insurancePaymentType" value="Cash"/>
+        <label for="cash">Cash</label><br>
+        <input type="radio" id="personal-cheque"  ngModel name="insurancePaymentType" value="Personal Cheque"/>
+        <label for="personal-cheque">Personal Cheque</label><br>
+        <input type="radio" id="debit-card"  ngModel name="insurancePaymentType" value="Debit Card"/>
+        <label for="debit-card">Debit Card</label><br>
+        <input type="radio" id="credit-card"  ngModel name="insurancePaymentType" value="Credit Card"/>
+        <label for="credit-card">Credit Card</label><br></p>
+
+    </div>
+    <div class="form-field">
+      <label for="start">Start</label>
+      <input type="date" id="start" ngModel name="insuranceStarDate"/>
+    </div>
+    <div class="form-field">
+      <label for="end">End</label>
+      <input type="date" id="end" ngModel name="insuranceEndDate"/>
+    </div>
+    <div class="form-field">
+      <label for="price">Price</label>
+      <input type="number" id="price" ngModel name="insurancePrice"/>
+    </div>
+
+    <div class="form-field" id="n1">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="insuranceNotes" rows="4" cols="50" ngModel></textarea>
+    </div>
+
+    <div class="action-buttons-insurance">
+      <button type="submit">Complete</button>
+      <button type="reset">Reset form</button>
+    </div>
+
+  </form>
+</main>

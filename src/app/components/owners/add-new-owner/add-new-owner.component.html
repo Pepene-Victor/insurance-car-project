@@ -1,0 +1,35 @@
+<!--<div>{{componentTitle | uppercase }}</div>-->
+<!--<div>{{componentTitle | lowercase }}</div>-->
+<!--<div>{{myDate | date : 'MMM dd, YYYY hh:mm:ss' }}</div>-->
+
+<main>
+  <h1>Add new person</h1>
+  <form *ngIf="!!ownerForm" [formGroup]="ownerForm" (ngSubmit)="submitForm()">
+    <div class="form-field">
+      <label for="first-name">First Name: </label>
+      <input type="text" id="first-name" formControlName="firstName"/>
+    </div>
+    <div class="form-field">
+      <label for="last-name">Last Name: </label>
+      <input type="text" id="last-name" formControlName="lastName"/>
+    </div>
+
+    <div class="form-field">
+      <label for="CNP">CNP: </label>
+      <input type="text" id="CNP" formControlName="cnp"/>
+    </div>
+    <div class="form-field">
+      <label for="birth date">Birth date: </label>
+      <input type="date" id="birth date" formControlName="birtDate" />
+    </div>
+    <div class="form-field">
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender" >
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="N/A">N/A</option>
+      </select>
+    </div>
+    <app-buttons [buttonName]="!!selectedOwner ? 'Save owner' : 'Add owner'" ></app-buttons>
+  </form>
+</main>
