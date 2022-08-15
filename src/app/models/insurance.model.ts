@@ -1,5 +1,5 @@
 import {CardIdEnum} from "../enums/cardId.enum";
-import {DirectPay} from "../enums/direct-pay.enum";
+
 import {PaymentType} from "../enums/payment-type.enum";
 import {PersonId} from "../enums/person-id.enum";
 
@@ -7,7 +7,7 @@ export class Insurance {
   private _companyName : string;
   private _personId : PersonId;
   private _carId : CardIdEnum;
-  private _directPay : DirectPay;
+  private _directPay : boolean;
   private _paymentType : PaymentType;
   private _start : Date;
   private _end : Date;
@@ -16,7 +16,7 @@ export class Insurance {
 
   constructor(companyName : string,
               personId : PersonId,
-              carId : CardIdEnum, directPay : DirectPay,
+              carId : CardIdEnum, directPay : boolean,
               paymentType : PaymentType,
               start : Date,
               end : Date,

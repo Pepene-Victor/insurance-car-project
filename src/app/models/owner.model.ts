@@ -1,5 +1,5 @@
 export class Owners{
-
+  private _id?: number;
   private _firstName: string;
   private _lastName: string;
   private _cnp: bigint;
@@ -14,14 +14,21 @@ export class Owners{
     this._gender=gender;
   }
   get firstName(){ return this._firstName};
-  set firstName(firstName: string ){ this._firstName=firstName};
+  set firstName(firstName: string ){ this._firstName = firstName};
   get lastName(){ return this._lastName};
-  set lastName(lastName: string ){ this._lastName=lastName};
+  set lastName(lastName: string ){ this._lastName = lastName};
   get cnp(){ return this._cnp};
   set cnp(cnp: bigint ){ this._cnp=cnp};
-  get birthDate(){ return this._birtDate};
-  set birthDate(birthDate: Date ){ this._birtDate=birthDate};
+  get birtDate(){ return this._birtDate};
+  set birtDate(birthDate: Date ){ this._birtDate=birthDate};
   get gender(){ return this._gender};
   set gender(gender: string ){ this._gender=gender};
+  get id(){
+    return this._id;
+  }
+  set id(newId){
+    this._id = newId;
+  }
+
 
 }

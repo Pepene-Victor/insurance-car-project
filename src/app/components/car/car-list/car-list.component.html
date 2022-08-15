@@ -1,0 +1,91 @@
+<!--<div *ngIf="carList.length>0">-->
+<!--  <p> Car list length: {{carList.length}} </p>-->
+<!--</div>-->
+<!--<ng-container *ngFor="let car of carList">-->
+<!--  {{car.brand}} {{car.cubicCap}}-->
+<!--</ng-container>-->
+
+<!--<div [ngSwitch]="fuelType">-->
+<!--  <p *ngSwitchCase="FuelType.BIODIESEL">-->
+<!--    {{FuelType.BIODIESEL}}-->
+<!--  </p>-->
+<!--  <p *ngSwitchCase="FuelType.HYBRID">-->
+<!--    {{FuelType.HYBRID}}-->
+<!--  </p>-->
+<!--  <p *ngSwitchDefault>-->
+<!--    Default-->
+<!--  </p>-->
+<!--</div>-->
+<h1>Table</h1>
+
+<table class="table" *ngIf="carList.length >0; else emptyResult" >
+  <tr>
+    <th>
+      Index
+    </th>
+
+    <th id="first-name">
+      Brand-Model
+    </th>
+    <th>
+      Cubic Cap
+    </th>
+    <th>
+      Serial Number
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Plates
+    </th>
+    <th>
+      Power
+    </th>
+    <th>
+      Owner ID
+    </th>
+    <th>
+      Fuel Type
+    </th>
+
+  </tr>
+  <tr class="items" id="row-items" *ngFor="let car of this.carList; let i=index" [appZebraStripedTable] = 'i'>
+    <td id="index" >
+      {{i}}
+    </td>
+    <td>
+      {{car | myFirstPipe}}
+    </td>
+    <td>
+      {{car.cubicCap | number: '2.2-3'}}
+    </td>
+    <td>
+      {{car.serialNum}}
+    </td>
+    <td>
+      {{car.type}}
+    </td>
+    <td>
+      {{car.plates | carPlates}}
+    </td>
+    <td>
+      {{car.fuelType}}
+    </td>
+    <td>
+      {{car.power}}
+    </td>
+    <td>
+      {{car.ownerId}}
+    </td>
+    <td class="edit-button">
+      <button (click)="editCar(i)">
+        Edit
+      </button>
+    </td>
+  </tr>
+</table>
+<ng-template #emptyResult> Tabelul este gol</ng-template>
+
+
+
